@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ryan Langat — Software Engineering Student, Front-End Developer and Cybersecurity Enthusiast.">
+  <meta name="theme-color" content="#090909">
+  <title>RYANDEV | Ryan Langat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#home" aria-label="RyanDev home">RYAN<span>DEV</span><i>.</i></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+      <a href="#projects">Projects</a><a href="#gallery">Gallery</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cta" href="#contact">Let's talk <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> SOFTWARE ENGINEERING · KENYA</p>
+        <h1>Building ideas<br>into <em>reality.</em></h1>
+        <h2>I'm Ryan Langat — <span id="typing">Software Engineering Student</span><b class="cursor">|</b></h2>
+        <p class="intro">I explore technology, build practical software solutions and keep learning how to make digital experiences useful, reliable and secure.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#projects">Explore my work <span>↗</span></a>
+          <a class="btn btn-outline" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/ryankipkorir30-bot" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+          <a href="mailto:ryankipkorir30@gmail.com">EMAIL ↗</a>
+          <span>BASED IN KENYA 🇰🇪</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="portrait-wrap">
+          <div class="portrait-glow"></div>
+          <img src="assets/profile.jpg" alt="Portrait of Ryan Langat" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="portrait-placeholder"><span>RL</span><small>YOUR RYANDEV<br>PORTRAIT</small></div>
+          <div class="portrait-caption"><span class="status-dot"></span> Always learning. Always building.</div>
+        </div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="vertical-note">RYAN LANGAT · RYANDEV</div>
+      </div>
+      <a class="scroll-cue" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
+    </section>
+
+    <section class="section about section-dark" id="about">
+      <div class="section-heading reveal"><p class="eyebrow">01 / ABOUT ME</p><h2>Curiosity is where<br><em>everything begins.</em></h2></div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="lead">I'm Ryan Langat, a Software Engineering Student, Front-End Developer and Cybersecurity Enthusiast from Kenya.</p>
+          <p>I'm passionate about understanding how technology works, solving real-world problems and transforming ideas into functional software applications.</p>
+          <p>My journey includes programming, web development, backend APIs, database systems, Linux and secure software practices. I enjoy learning by building and improving projects step by step.</p>
+          <a class="inline-link" href="#contact">Have a project in mind? Let's connect <span>↗</span></a>
+        </div>
+        <div class="profile-facts reveal">
+          <div><small>NAME</small><strong>Ryan Langat</strong></div>
+          <div><small>DEVELOPER BRAND</small><strong>RyanDev</strong></div>
+          <div><small>LOCATION</small><strong>Kenya 🇰🇪</strong></div>
+          <div><small>EDUCATION</small><strong>Software Engineering Student</strong></div>
+          <div><small>INTERESTS</small><strong>Development · Cybersecurity · Problem Solving</strong></div>
+          <div><small>FOCUS</small><strong>Building practical applications</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading reveal"><p class="eyebrow">02 / TECHNICAL TOOLKIT</p><h2>Tools I use to<br><em>make things work.</em></h2><p class="section-subtitle">Technologies I work with and continue to develop through practice and projects.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card reveal"><span class="card-index">01</span><h3>Frontend Development</h3><p>HTML · CSS · JavaScript</p></article>
+        <article class="skill-card reveal"><span class="card-index">02</span><h3>Backend Development</h3><p>Python · Node.js · Express · FastAPI · Uvicorn</p></article>
+        <article class="skill-card reveal"><span class="card-index">03</span><h3>Programming</h3><p>Python · JavaScript · C++ · Java</p></article>
+        <article class="skill-card reveal"><span class="card-index">04</span><h3>Databases</h3><p>PostgreSQL · MySQL · MongoDB · SQLite</p></article>
+        <article class="skill-card reveal"><span class="card-index">05</span><h3>Security & Linux</h3><p>Kali Linux · Linux Terminal · Networking · JWT · Password Hashing</p></article>
+        <article class="skill-card reveal"><span class="card-index">06</span><h3>Developer Tools</h3><p>Git · GitHub · VS Code · Docker · Termux · Alembic</p></article>
+      </div>
+      <p class="skill-note">This list reflects my learning and project experience; I continue to strengthen these skills.</p>
+    </section>
+
+    <section class="section section-dark" id="projects">
+      <div class="section-heading reveal"><p class="eyebrow">03 / SELECTED PROJECTS</p><h2>Learning through<br><em>building real things.</em></h2><p class="section-subtitle">A selection of software projects and concepts I've worked on.</p></div>
+      <div class="projects-grid">
+        <a class="project-card project-link reveal" href="project.html?project=kise-attendance" aria-label="Read more about KISE College Attendance">
+          <div class="project-meta"><span>01 / EDUCATION</span><span>↗</span></div>
+          <h3>KISE College Attendance</h3><p>A smart college attendance system concept featuring QR-code attendance, student records and administration workflows.</p><div class="tags"><span>Python</span><span>JavaScript</span><span>Database</span></div>
+          <span class="project-read-more">EXPLORE PROJECT <b>↗</b></span>
+        </a>
+        <a class="project-card project-link reveal" href="project.html?project=trailhead-hq" aria-label="Read more about TrailHead HQ">
+          <div class="project-meta"><span>02 / TRAVEL</span><span>↗</span></div>
+          <h3>TrailHead HQ</h3><p>A travel booking platform with customer bookings, driver management and an administrator dashboard.</p><div class="tags"><span>Node.js</span><span>Express</span><span>SQLite</span></div>
+          <span class="project-read-more">EXPLORE PROJECT <b>↗</b></span>
+        </a>
+        <a class="project-card project-link reveal" href="project.html?project=chacha-arthur-pos" aria-label="Read more about Chacha Arthur-System">
+          <div class="project-meta"><span>03 / RETAIL</span><span>↗</span></div>
+          <h3>Chacha Arthur-System</h3><p>A supermarket point-of-sale system with product inventory, sales management and payment integration.</p><div class="tags"><span>Python</span><span>PostgreSQL</span><span>POS</span></div>
+          <span class="project-read-more">EXPLORE PROJECT <b>↗</b></span>
+        </a>
+        <a class="project-card project-link reveal" href="project.html?project=patapro-kenya" aria-label="Read more about PataPro Kenya">
+          <div class="project-meta"><span>04 / SERVICES</span><span>↗</span></div>
+          <h3>PataPro Kenya</h3><p>A service-provider platform concept connecting customers with professionals across Kenyan counties.</p><div class="tags"><span>Node.js</span><span>PostgreSQL</span><span>JavaScript</span></div>
+          <span class="project-read-more">EXPLORE PROJECT <b>↗</b></span>
+        </a>
+        <a class="project-card project-link reveal" href="project.html?project=animaltreatrkl" aria-label="Read more about AnimalTreatRKL Hospital">
+          <div class="project-meta"><span>05 / HEALTHCARE</span><span>↗</span></div>
+          <h3>AnimalTreatRKL Hospital</h3><p>An animal hospital management application for handling animals, owners, staff and appointments.</p><div class="tags"><span>Python</span><span>Flask</span><span>PostgreSQL</span></div>
+          <span class="project-read-more">EXPLORE PROJECT <b>↗</b></span>
+        </a>
+        <a class="project-card project-link reveal" href="project.html?project=majitrace-kenya" aria-label="Read more about MajiTrace Kenya">
+          <div class="project-meta"><span>06 / WATER</span><span>↗</span></div>
+          <h3>MajiTrace Kenya</h3><p>A software project focused on water tracking and practical water-management solutions.</p><div class="tags"><span>Python</span><span>PostgreSQL</span><span>Backend</span></div>
+          <span class="project-read-more">EXPLORE PROJECT <b>↗</b></span>
+        </a>
+        <a class="project-card project-link reveal" href="project.html?project=chachapkorir-bookshop" aria-label="Read more about ChachaPkorir Bookshop">
+          <div class="project-meta"><span>07 / COMMERCE</span><span>↗</span></div>
+          <h3>ChachaPkorir Bookshop</h3><p>A bookshop management platform with sales, inventory, customer orders and payment options.</p><div class="tags"><span>Node.js</span><span>PostgreSQL</span><span>Payments</span></div>
+          <span class="project-read-more">EXPLORE PROJECT <b>↗</b></span>
+        </a>
+        <a class="project-card project-link reveal" href="project.html?project=ryandev-portfolio" aria-label="Read more about RyanDev Portfolio">
+          <div class="project-meta"><span>08 / PERSONAL BRAND</span><span>↗</span></div>
+          <h3>RyanDev Portfolio</h3><p>My personal space for presenting my technical journey, skills and software projects.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <span class="project-read-more">EXPLORE PROJECT <b>↗</b></span>
+        </a>
+      </div>
+    </section>
+
+
+
+    <section class="section gallery-section section-dark" id="gallery">
+      <div class="section-heading reveal">
+        <p class="eyebrow">04 / MY PHOTO GALLERY</p>
+        <h2>Me, my work &<br><em>my learning journey.</em></h2>
+        <p class="section-subtitle">A few portraits and creative visuals from my RyanDev journey. Scroll through the gallery or open any image for a closer look.</p>
+      </div>
+      <div class="gallery-toolbar reveal">
+        <span class="gallery-count">01 — 04 <i> / RYANDEV MOMENTS</i></span>
+        <div class="gallery-controls">
+          <button class="gallery-arrow" id="galleryPrev" type="button" aria-label="Scroll gallery left">←</button>
+          <button class="gallery-arrow" id="galleryNext" type="button" aria-label="Scroll gallery right">→</button>
+        </div>
+      </div>
+      <div class="gallery-track reveal" id="galleryTrack" tabindex="0" aria-label="Scrollable photo gallery">
+        <button class="gallery-card gallery-portrait" type="button" data-full="assets/ryan-portrait.jpg" aria-label="Open Ryan's portrait">
+          <img src="assets/ryan-portrait.jpg" alt="Ryan Langat portrait" loading="lazy">
+          <span class="gallery-caption"><small>01 / PORTRAIT</small><strong>Ryan Langat</strong></span>
+        </button>
+        <button class="gallery-card" type="button" data-full="assets/ryandev-trailhead-portfolio.png" aria-label="Open RyanDev TrailHead portfolio poster">
+          <img src="assets/ryandev-trailhead-portfolio.png" alt="RyanDev portfolio poster featuring TrailHead HQ and projects" loading="lazy">
+          <span class="gallery-caption"><small>02 / PORTFOLIO</small><strong>Dream · Code · Build · Innovate</strong></span>
+        </button>
+        <button class="gallery-card" type="button" data-full="assets/ryandev-neon-portfolio.png" aria-label="Open RyanDev neon portfolio poster">
+          <img src="assets/ryandev-neon-portfolio.png" alt="RyanDev neon technology portfolio poster" loading="lazy">
+          <span class="gallery-caption"><small>03 / PERSONAL BRAND</small><strong>RyanDev — Code Today</strong></span>
+        </button>
+        <button class="gallery-card" type="button" data-full="assets/python-tools-feature.png" aria-label="Open Python tools learning poster">
+          <img src="assets/python-tools-feature.png" alt="Educational poster about Python tools for software engineering" loading="lazy">
+          <span class="gallery-caption"><small>04 / LEARNING</small><strong>Python Tools & Engineering</strong></span>
+        </button>
+      </div>
+      <p class="gallery-hint reveal">DRAG OR SWIPE TO EXPLORE <span>•</span> CLICK AN IMAGE TO ENLARGE</p>
+    </section>
+
+    <dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Expanded gallery image">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+      <img id="lightboxImage" src="" alt="">
+      <p id="lightboxCaption"></p>
+    </dialog>
+
+    <section class="section" id="journey">
+      <div class="section-heading reveal"><p class="eyebrow">05 / MY JOURNEY</p><h2>Progress over<br><em>perfection.</em></h2></div>
+      <div class="timeline">
+        <article class="timeline-item reveal"><span>FOUNDATIONS</span><h3>Programming fundamentals</h3><p>Practising programming logic, algorithms, Python, C++ and object-oriented programming.</p></article>
+        <article class="timeline-item reveal"><span>WEB DEVELOPMENT</span><h3>Creating web applications</h3><p>Learning HTML, CSS, JavaScript, backend development and API integration.</p></article>
+        <article class="timeline-item reveal"><span>DATABASE ENGINEERING</span><h3>Working with data</h3><p>Exploring SQL, PostgreSQL, database design, migrations and application integration.</p></article>
+        <article class="timeline-item reveal"><span>CYBERSECURITY & LINUX</span><h3>Understanding systems and security</h3><p>Practising Linux workflows, networking fundamentals and secure development concepts.</p></article>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="services">
+      <div class="section-heading reveal"><p class="eyebrow">06 / AREAS OF INTEREST</p><h2>Technology with<br><em>a purpose.</em></h2></div>
+      <div class="services-grid">
+        <article class="service reveal"><span>01</span><div><h3>Web Development</h3><p>Responsive and accessible websites.</p></div></article>
+        <article class="service reveal"><span>02</span><div><h3>Backend Development</h3><p>APIs, application logic and integrations.</p></div></article>
+        <article class="service reveal"><span>03</span><div><h3>Database Systems</h3><p>Data modelling, SQL and application storage.</p></div></article>
+        <article class="service reveal"><span>04</span><div><h3>Security-focused Development</h3><p>Learning and applying secure software practices.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-heading reveal"><p class="eyebrow">07 / GET IN TOUCH</p><h2>Let's create<br><em>something meaningful.</em></h2><p class="section-subtitle">Have an idea, opportunity or project to discuss? Reach out.</p></div>
+      <div class="contact-panel reveal">
+        <a href="mailto:ryankipkorir30@gmail.com"><small>EMAIL</small><strong>ryankipkorir30@gmail.com</strong><span>↗</span></a>
+        <a href="https://wa.me/254726902574" target="_blank" rel="noopener noreferrer"><small>WHATSAPP</small><strong>+254 726 902 574</strong><span>↗</span></a>
+        <a href="https://github.com/ryankipkorir30-bot" target="_blank" rel="noopener noreferrer"><small>GITHUB</small><strong>ryankipkorir30-bot</strong><span>↗</span></a>
+      </div>
+      <a class="btn btn-gold contact-button" href="mailto:ryankipkorir30@gmail.com">Send me an email <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#home">RYAN<span>DEV</span><i>.</i></a>
+    <p>Designed & built with curiosity by Ryan Langat.</p>
+    <p>© <span id="year"></span> RyanDev. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

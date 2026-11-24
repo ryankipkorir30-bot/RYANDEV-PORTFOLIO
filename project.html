@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore a RyanDev software project by Ryan Langat.">
+  <meta name="theme-color" content="#090909">
+  <title>Project details | RyanDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-detail-page">
+  <header class="header">
+    <a class="logo" href="index.html#home" aria-label="RyanDev home">RYAN<span>DEV</span><i>.</i></a>
+    <nav aria-label="Main navigation"><a href="index.html#home">Home</a><a href="index.html#projects">Projects</a><a href="index.html#gallery">Gallery</a><a href="index.html#contact">Contact</a></nav>
+    <a class="header-cta" href="index.html#contact">Let's talk <span>↗</span></a>
+  </header>
+  <main class="project-detail-main">
+    <a class="back-link" href="index.html#projects">← BACK TO ALL PROJECTS</a>
+    <section class="project-detail-hero">
+      <p class="eyebrow" id="detailCategory">RYANDEV PROJECT</p>
+      <h1 id="detailTitle">Project details</h1>
+      <p class="project-detail-lead" id="detailShort"></p>
+      <div class="detail-status"><span class="status-dot"></span><span id="detailStatus"></span></div>
+    </section>
+    <div class="project-detail-layout">
+      <article class="project-detail-content">
+        <section class="detail-panel">
+          <p class="eyebrow">01 / OVERVIEW</p>
+          <h2>About this <em>project.</em></h2>
+          <p id="detailOverview"></p>
+        </section>
+        <section class="detail-panel">
+          <p class="eyebrow">02 / PROJECT PURPOSE</p>
+          <h2>Why I built <em>it.</em></h2>
+          <p id="detailPurpose"></p>
+        </section>
+        <section class="detail-panel">
+          <p class="eyebrow">03 / KEY FEATURES</p>
+          <h2>What it <em>includes.</em></h2>
+          <ul class="detail-feature-list" id="detailFeatures"></ul>
+        </section>
+      </article>
+      <aside class="detail-sidebar">
+        <div class="detail-panel">
+          <p class="eyebrow">TECH STACK</p>
+          <h2>Tools & <em>technologies.</em></h2>
+          <div class="detail-tags" id="detailStack"></div>
+        </div>
+        <div class="detail-panel detail-contact">
+          <p class="eyebrow">LET'S CONNECT</p>
+          <h3>Interested in this project?</h3>
+          <p>Get in touch to discuss the project, its development or a similar idea.</p>
+          <a class="btn btn-gold" href="index.html#contact">Contact Ryan <span>↗</span></a>
+        </div>
+      </aside>
+    </div>
+    <div class="detail-bottom-nav">
+      <a class="inline-link" href="index.html#projects">← View all projects</a>
+      <a class="inline-link" href="index.html#home">Back to RyanDev home ↑</a>
+    </div>
+  </main>
+  <footer class="footer"><span>© <span id="year"></span> RYANDEV · RYAN LANGAT</span><span>DREAM · CODE · BUILD · INNOVATE</span></footer>
+  <script src="project-details.js"></script>
+</body>
+</html>
