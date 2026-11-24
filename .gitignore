@@ -1,0 +1,7 @@
+# Secrets and runtime data
+.env
+instance/
+__pycache__/
+*.py[cod]
+.venv/
+venv/

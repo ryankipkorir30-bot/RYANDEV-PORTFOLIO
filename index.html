@@ -195,6 +195,24 @@
 
     <section class="section contact" id="contact">
       <div class="section-heading reveal"><p class="eyebrow">07 / GET IN TOUCH</p><h2>Let's create<br><em>something meaningful.</em></h2><p class="section-subtitle">Have an idea, opportunity or project to discuss? Reach out.</p></div>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="contact-form-heading">
+          <p class="eyebrow">SEND A MESSAGE</p>
+          <h3>Tell me what you're <em>building.</em></h3>
+          <p>Your message will be delivered to my private inbox. I usually reply through WhatsApp or email.</p>
+        </div>
+        <div class="contact-form-grid">
+          <label>Your name<input name="name" type="text" maxlength="80" autocomplete="name" required placeholder="Your full name"></label>
+          <label>Email address<input name="email" type="email" maxlength="254" autocomplete="email" required placeholder="you@example.com"></label>
+          <label>WhatsApp number<input name="phone" type="tel" maxlength="24" autocomplete="tel" required placeholder="+254 7XX XXX XXX"></label>
+          <label>Subject<input name="subject" type="text" maxlength="120" required placeholder="Project enquiry, collaboration..."></label>
+          <label class="contact-message-field">Message<textarea name="message" rows="5" maxlength="5000" required placeholder="Write your message here..."></textarea></label>
+        </div>
+        <div class="contact-form-bottom">
+          <p id="contactFormStatus" class="form-status" role="status" aria-live="polite">Your details are only used to respond to your enquiry.</p>
+          <button class="btn btn-gold" type="submit" id="contactSubmit">Send message <span>↗</span></button>
+        </div>
+      </form>
       <div class="contact-panel reveal">
         <a href="mailto:ryankipkorir30@gmail.com"><small>EMAIL</small><strong>ryankipkorir30@gmail.com</strong><span>↗</span></a>
         <a href="https://wa.me/254726902574" target="_blank" rel="noopener noreferrer"><small>WHATSAPP</small><strong>+254 726 902 574</strong><span>↗</span></a>
@@ -207,7 +225,7 @@
   <footer class="footer">
     <a class="logo" href="#home">RYAN<span>DEV</span><i>.</i></a>
     <p>Designed & built with curiosity by Ryan Langat.</p>
-    <p>© <span id="year"></span> RyanDev. All rights reserved.</p>
+    <p>© <span id="year"></span> RyanDev. All rights reserved.</p>\n    <a class="admin-entry" href="/admin">Admin</a>
   </footer>
   <script src="script.js"></script>
 </body>

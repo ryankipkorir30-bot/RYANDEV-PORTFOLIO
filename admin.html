@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Private Message Center | RyanDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <section id="loginView" class="admin-login-wrap">
+      <a class="logo" href="/">RYAN<span>DEV</span><i>.</i></a>
+      <div class="admin-panel" style="margin-top:22px">
+        <p class="eyebrow">PRIVATE AREA / AUTHORIZED ACCESS ONLY</p>
+        <h1 style="font:600 34px var(--serif)">Message Center</h1>
+        <p style="color:var(--muted);font-size:12px;margin-top:8px">Sign in to view messages sent through your portfolio.</p>
+        <form id="loginForm">
+          <label for="username">ADMIN USERNAME</label>
+          <input id="username" name="username" autocomplete="username" required maxlength="80">
+          <label for="password">PASSWORD</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <p class="admin-error" id="loginError" role="alert"></p>
+          <button class="btn btn-gold" style="width:100%;justify-content:center" type="submit" id="loginButton">Sign in <span>↗</span></button>
+        </form>
+      </div>
+      <a class="inline-link" href="/">← Return to portfolio</a>
+    </section>
+
+    <section id="dashboardView" hidden>
+      <header class="admin-topbar">
+        <div>
+          <a class="logo" href="/">RYAN<span>DEV</span><i>.</i></a>
+          <p>Private inbox · Ryan Langat</p>
+        </div>
+        <div class="admin-actions">
+          <button class="admin-btn" id="refreshButton" type="button">↻ Refresh inbox</button>
+          <button class="admin-btn" id="logoutButton" type="button">Sign out</button>
+        </div>
+      </header>
+      <div class="admin-stats">
+        <div class="admin-stat"><small>TOTAL MESSAGES</small><strong id="totalCount">0</strong></div>
+        <div class="admin-stat"><small>UNREAD</small><strong id="unreadCount">0</strong></div>
+        <div class="admin-stat"><small>READ</small><strong id="readCount">0</strong></div>
+      </div>
+      <div class="admin-layout">
+        <section class="admin-panel">
+          <h2>Inbox</h2>
+          <div class="admin-list" id="messageList"><p class="admin-empty">Loading messages…</p></div>
+        </section>
+        <section class="admin-panel admin-detail" id="messageDetail">
+          <p class="eyebrow">MESSAGE DETAILS</p>
+          <h2>Select a message</h2>
+          <p>Choose a message from your inbox to read it and prepare a reply.</p>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="/admin.js" defer></script>
+</body>
+</html>

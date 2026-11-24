@@ -111,3 +111,51 @@ lightbox?.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && lightbox?.open) lightbox.close();
 });
+
+
+/* Secure contact form: message submissions are stored by the Flask backend. */
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  const statusEl = document.getElementById("contactFormStatus");
+  const submitBtn = document.getElementById("contactSubmit");
+  let csrfToken = "";
+
+  fetch("/api/csrf", { credentials: "same-origin" })
+    .then((response) => response.ok ? response.json() : Promise.reject())
+    .then((data) => { csrfToken = data.csrf_token; })
+    .catch(() => {
+      statusEl.textContent = "The message service is currently unavailable. Please use the WhatsApp or email links below.";
+    });
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    if (!csrfToken) {
+      statusEl.textContent = "The secure message service is not ready. Refresh the page or contact me through WhatsApp.";
+      return;
+    }
+
+    const payload = Object.fromEntries(new FormData(contactForm).entries());
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Sending…";
+    statusEl.textContent = "Sending your message securely…";
+
+    try {
+      const response = await fetch("/api/messages", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfToken },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Message could not be sent.");
+      contactForm.reset();
+      statusEl.textContent = "Thank you. Your message has been received successfully.";
+    } catch (error) {
+      statusEl.textContent = error.message || "Unable to send your message. Please try again later.";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Send message <span>↗</span>';
+    }
+  });
+}
