@@ -73,10 +73,36 @@ function prettyDate(value) {
   return Number.isNaN(date.getTime()) ? value : date.toLocaleString();
 }
 
-function renderStats(stats) {
-  document.getElementById("totalCount").textContent = stats.total;
-  document.getElementById("unreadCount").textContent = stats.unread;
-  document.getElementById("readCount").textContent = stats.read;
+function renderStats(stats = {}) {
+  const safeStats = stats && typeof stats === "object" ? stats : {};
+
+  const isRead = (message) =>
+    message.is_read === true ||
+    message.is_read === 1 ||
+    message.is_read === "true";
+
+  const totalFallback = messages.length;
+  const unreadFallback = messages.filter((message) => !isRead(message)).length;
+  const readFallback = messages.filter(isRead).length;
+
+  const getCount = (value, fallback) =>
+    value !== undefined &&
+    value !== null &&
+    Number.isFinite(Number(value))
+      ? Number(value)
+      : fallback;
+
+  const total = getCount(safeStats.total, totalFallback);
+  const unread = getCount(safeStats.unread, unreadFallback);
+  const read = getCount(safeStats.read, readFallback);
+
+  const totalElement = document.getElementById("totalCount");
+  const unreadElement = document.getElementById("unreadCount");
+  const readElement = document.getElementById("readCount");
+
+  if (totalElement) totalElement.textContent = String(total);
+  if (unreadElement) unreadElement.textContent = String(unread);
+  if (readElement) readElement.textContent = String(read);
 }
 
 function renderList() {
