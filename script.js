@@ -113,25 +113,44 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-/* Secure contact form: message submissions are stored by the Flask backend. */
+
+/* RyanDev hosted messaging backend configuration. */
+const API_BASE = String(window.RYANDEV_API_BASE || "").replace(/\/+$/, "");
+
+const adminEntry = document.getElementById("adminEntry");
+if (adminEntry) {
+  if (API_BASE) {
+    adminEntry.href = `${API_BASE}/admin`;
+    adminEntry.target = "_blank";
+    adminEntry.rel = "noopener noreferrer";
+  } else {
+    adminEntry.href = "#";
+    adminEntry.title = "The private message center has not been configured yet.";
+    adminEntry.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.alert("The private message center will be available after backend deployment.");
+    });
+  }
+}
+
+/* Public contact form: messages are sent to the hosted Flask backend. */
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
   const statusEl = document.getElementById("contactFormStatus");
   const submitBtn = document.getElementById("contactSubmit");
-  let csrfToken = "";
 
-  fetch("/api/csrf", { credentials: "same-origin" })
-    .then((response) => response.ok ? response.json() : Promise.reject())
-    .then((data) => { csrfToken = data.csrf_token; })
-    .catch(() => {
-      statusEl.textContent = "The message service is currently unavailable. Please use the WhatsApp or email links below.";
-    });
+  if (!API_BASE) {
+    statusEl.textContent =
+      "The message service is being configured. Please use the WhatsApp or email links below.";
+  }
 
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!contactForm.reportValidity()) return;
-    if (!csrfToken) {
-      statusEl.textContent = "The secure message service is not ready. Refresh the page or contact me through WhatsApp.";
+
+    if (!API_BASE) {
+      statusEl.textContent =
+        "The message service is not configured yet. Please contact me through WhatsApp or email.";
       return;
     }
 
@@ -141,18 +160,23 @@ if (contactForm) {
     statusEl.textContent = "Sending your message securely…";
 
     try {
-      const response = await fetch("/api/messages", {
+      const response = await fetch(`${API_BASE}/api/messages`, {
         method: "POST",
-        credentials: "same-origin",
-        headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfToken },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
+
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Message could not be sent.");
+      if (!response.ok) {
+        throw new Error(result.error || "Message could not be sent.");
+      }
+
       contactForm.reset();
-      statusEl.textContent = "Thank you. Your message has been received successfully.";
+      statusEl.textContent =
+        "Thank you. Your message has been received successfully.";
     } catch (error) {
-      statusEl.textContent = error.message || "Unable to send your message. Please try again later.";
+      statusEl.textContent =
+        error.message || "Unable to send your message. Please try again later.";
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = 'Send message <span>↗</span>';
